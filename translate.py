@@ -40,7 +40,7 @@ phrase = ""
 for tup in sorted_words:
     phrase += tup[1] + " "
 
-print(phrase)
+txt.write(phrase[:2000])
 
 
 
