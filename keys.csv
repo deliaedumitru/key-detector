@@ -4,8 +4,8 @@ bwv,key
 0212,G major
 0232,B minor
 0243,D major
-0243,E♭ major
-0525,E♭ major
+0243,E flat major
+0525,E flat major
 0529,C major
 0530,G major
 0532,D major
@@ -14,7 +14,7 @@ bwv,key
 0539,D minor
 0543,A minor
 0549,C minor
-0552,E♭ major
+0552,E flat major
 0572,G major
 0582,C minor
 0588,D minor
@@ -24,7 +24,7 @@ bwv,key
 0651,F major
 0652,G major
 0653,G major
-0654,E♭ major
+0654,E flat major
 0655,G major
 0656,A major
 0657,G major
@@ -43,7 +43,7 @@ bwv,key
 0773,C minor
 0774,D major
 0775,D minor
-0776,E♭ major
+0776,E flat major
 0777,E major
 0778,E minor
 0779,F major
@@ -52,13 +52,13 @@ bwv,key
 0782,G minor
 0783,A major
 0784,A minor
-0785,B♭ major
+0785,B flat major
 0786,B minor
 0787,C major
 0788,C minor
 0789,D major
 0790,D minor
-0791,E♭ major
+0791,E flat major
 0792,E major
 0793,E minor
 0794,F major
@@ -67,7 +67,7 @@ bwv,key
 0797,G minor
 0798,A major
 0799,A minor
-0800,B♭ major
+0800,B flat major
 0801,B minor
 0802,E minor
 0803,F major
@@ -82,14 +82,14 @@ bwv,key
 0812,D minor
 0813,C minor
 0814,B minor
-0815,E♭ major
+0815,E flat major
 0816,G major
 0817,E major
 0818,A minor
-0819,E♭ major
+0819,E flat major
 0820,F major
 0823,F minor
-0825,B♭ major
+0825,B flat major
 0826,C minor
 0827,A minor
 0828,D major
@@ -100,51 +100,51 @@ bwv,key
 0841,G major
 0846,C major
 0847,C minor
-0848,C♯ major
-0849,C♯ minor
+0848,C sharp major
+0849,C sharp minor
 0850,D major
 0851,D minor
-0852,E♭ major
+0852,E flat major
 0854,E major
 0855,E minor
 0856,F major
 0857,F minor
-0858,F♯ major
-0859,F♯ minor
+0858,F sharp major
+0859,F sharp minor
 0860,G major
 0861,G minor
-0862,A♭ major
-0863,G♯ minor
+0862,A flat major
+0863,G sharp minor
 0864,A major
 0865,A minor
-0866,B♭ major
-0867,B♭ minor
+0866,B flat major
+0867,B flat minor
 0868,B major
 0869,B minor
 0870,C major
 0870,C major
 0870,C major
 0871,C minor
-0872,C♯ major
-0873,C♯ minor
+0872,C sharp major
+0873,C sharp minor
 0874,D major
 0875,D minor
-0876,E♭ major
-0877,D♯ minor
+0876,E flat major
+0877,D sharp minor
 0878,E major
 0879,E minor
 0880,F major
 0881,F minor
-0882,F♯ major
-0883,F♯ minor
+0882,F sharp major
+0883,F sharp minor
 0884,G major
 0885,G minor
-0886,A♭ major
-0887,G♯ minor
+0886,A flat major
+0887,G sharp minor
 0888,A major
 0889,A minor
-0890,B♭ major
-0891,B♭ minor
+0890,B flat major
+0891,B flat minor
 0892,B major
 0893,B minor
 0894,A minor
@@ -154,7 +154,7 @@ bwv,key
 0901,F major
 0903,D minor
 0906,C minor
-0910,F♯ minor
+0910,F sharp minor
 0911,C minor
 0912,D major
 0913,D minor
@@ -176,7 +176,7 @@ bwv,key
 0979,B minor
 0980,G major
 0981,C minor
-0982,B♭ major
+0982,B flat major
 0983,G minor
 0984,C major
 0985,G minor
@@ -184,10 +184,10 @@ bwv,key
 0987,D minor
 0988,G major
 0989,A minor
-0992,B♭ major
+0992,B flat major
 0993,E major
 0997,C minor
-0998,E♭ major
+0998,E flat major
 1000,G minor
 1002,B minor
 1003,A minor
@@ -198,7 +198,7 @@ bwv,key
 1007,G major
 1008,D minor
 1009,C major
-1010,E♭ major
+1010,E flat major
 1011,C minor
 1012,D major
 1013,A minor
