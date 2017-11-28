@@ -4,6 +4,9 @@ csv = open(sys.argv[1], "r")
 name = sys.argv[2]
 txt = open(name, "w")
 
+# run as
+# python translate.py csv-file dest-file
+
 OFFSET = 33
 
 content = []
@@ -15,12 +18,12 @@ for line in csv:
         content.append(fields)
 
 notes = []
-    
+
 # find start time & end time for each note    
 for i in range(0, len(content)):
-    if content[i][2] == "Note_on_c":
+    if content[i][2] == "Note_on_c" and content[i][5] != '0':
         for j in range(i, len(content)):
-            if content[j][2] == "Note_off_c" and content[j][4] == content[i][4]:
+            if (content[j][2] == "Note_off_c" or (content[j][2] == "Note_on_c" and int(content[j][5]) == 0)) and content[j][4] == content[i][4]:
                 notes.append((content[i][4], content[i][1], content[j][1]))
                 break
 
@@ -40,9 +43,4 @@ phrase = ""
 for tup in sorted_words:
     phrase += tup[1] + " "
 
-print(phrase)
-
-
-
-
-
+txt.write(phrase)
