@@ -1,19 +1,34 @@
 import sys
+from collections import Counter
 from operator import itemgetter
+import pandas
+
 csv = open(sys.argv[1], "r")
-name = sys.argv[2]
-txt = open(name, "w")
+# name = sys.argv[2]
+# txt = open(name, "w")
 
 # run as
 # python translate.py csv-file dest-file
 
-OFFSET = 33
+KEYS_CSV_PATH = "keys.csv"
+
+DATA_FILE_PATH = "data.csv"
+
+def getKey(filename):
+    keys = pandas.read_csv(KEYS_CSV_PATH, dtype={'bwv': object})
+    bwv_str = filename.split('\\')[-1][:4]
+    return keys.loc[keys['bwv'] == bwv_str]['key'].iloc[0]
+    
+def getKeyType(filename):
+    keys = pandas.read_csv(KEYS_CSV_PATH, dtype={'bwv': object})
+    bwv_str = filename.split('\\')[-1][:4]
+    return keys.loc[keys['bwv'] == bwv_str]['key'].iloc[0].split()[-1]
 
 content = []
 
 # clean unnecessary lines
 for line in csv:
-    if "Note_on_c" in line or "Note_off_c" in line:
+    if "Note_on_c" in line:
         fields = line.split(", ")
         content.append(fields)
 
@@ -21,26 +36,16 @@ notes = []
 
 # find start time & end time for each note    
 for i in range(0, len(content)):
-    if content[i][2] == "Note_on_c" and content[i][5] != '0':
-        for j in range(i, len(content)):
-            if (content[j][2] == "Note_off_c" or (content[j][2] == "Note_on_c" and int(content[j][5]) == 0)) and content[j][4] == content[i][4]:
-                notes.append((content[i][4], content[i][1], content[j][1]))
-                break
+    if content[i][2] == "Note_on_c" and int(content[i][5]) != 0:
+        notes.append(int(content[i][4]) % 12)
 
-words = {}
+note_counter = Counter(notes)
+freq_pseudo_dict = sorted(note_counter.items(), key = lambda x: x[0])
+freq_list_abs = [el[1] for el in freq_pseudo_dict]
 
-# find notes that are being played simultaneously
-for i in range(0, len(notes)):
-    word = chr(int(notes[i][0]) + OFFSET)
-    if notes[i][1] in words:
-        words[notes[i][1]] += word
-    else:
-        words[notes[i][1]] = word
+freqs = [el / sum(freq_list_abs) for el in freq_list_abs]
 
-sorted_words = sorted(words.items(), key = lambda x: int(x[0]))
+key_type = getKeyType(sys.argv[1])
 
-phrase = ""
-for tup in sorted_words:
-    phrase += tup[1] + " "
-
-txt.write(phrase)
+data_file = open(DATA_FILE_PATH, "a")
+data_file.write(','.join([str(el) for el in freqs]) + "," + key_type + "\n")
