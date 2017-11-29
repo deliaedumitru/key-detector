@@ -32,20 +32,16 @@ for line in csv:
         fields = line.split(", ")
         content.append(fields)
 
-notes = []
+note_freq = [0] * 12
 
 # find start time & end time for each note    
 for i in range(0, len(content)):
     if content[i][2] == "Note_on_c" and int(content[i][5]) != 0:
-        notes.append(int(content[i][4]) % 12)
+        note_freq[int(content[i][4]) % 12] += 1
 
-note_counter = Counter(notes)
-freq_pseudo_dict = sorted(note_counter.items(), key = lambda x: x[0])
-freq_list_abs = [el[1] for el in freq_pseudo_dict]
-
-freqs = [el / sum(freq_list_abs) for el in freq_list_abs]
+note_freq = [el / sum(note_freq) for el in note_freq]
 
 key_type = getKeyType(sys.argv[1])
 
 data_file = open(DATA_FILE_PATH, "a")
-data_file.write(','.join([str(el) for el in freqs]) + "," + key_type + "\n")
+data_file.write(','.join([str(el) for el in note_freq]) + "," + key_type + "\n")
