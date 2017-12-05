@@ -2,7 +2,7 @@ import sys
 import os
 
 # run as
-# python csv-to-ascii.py csv-dir dest-dir
+# python csv-to-ascii.py csv-dir
 
 directory = os.fsencode(sys.argv[1])
 
