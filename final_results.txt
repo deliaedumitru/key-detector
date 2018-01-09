@@ -1,0 +1,52 @@
+Total instances (train/test):		5688 (5119/569)
+split					90 %
+
+Bayes Net
+
+Correctly Classified Instances          85.2373 %
+Incorrectly Classified Instances	14.7627 %
+Kappa statistic                          0.8458
+Mean absolute error                      0.0127
+Root mean squared error                  0.105 
+Relative absolute error                 15.9065 %
+Root relative squared error             52.5354 %
+
+K-Star
+
+Correctly Classified Instances          86.9947 %
+Incorrectly Classified Instances        13.0053 %
+Kappa statistic                          0.8641
+Mean absolute error                      0.0238
+Root mean squared error                  0.0997
+Relative absolute error                 29.8302 %
+Root relative squared error             49.8599 %
+
+Multilayer Perceptron
+
+Correctly Classified Instances          85.413  %
+Incorrectly Classified Instances        14.587  %
+Kappa statistic                          0.8476
+Mean absolute error                      0.0215
+Root mean squared error                  0.1066
+Relative absolute error                 26.8858 %
+Root relative squared error             53.3112 %
+
+Simple Logistic
+
+Correctly Classified Instances          85.9402 %
+Incorrectly Classified Instances        14.0598 %
+Kappa statistic                          0.8531
+Mean absolute error                      0.0266
+Root mean squared error                  0.1076
+Relative absolute error                 33.2721 %
+Root relative squared error             53.8518 %
+
+SMO
+
+Correctly Classified Instances          87.3462 %
+Incorrectly Classified Instances        12.6538 %
+Kappa statistic                          0.8678
+Mean absolute error                      0.0213
+Root mean squared error                  0.0983
+Relative absolute error                 26.6919 %
+Root relative squared error             49.1609 %
