@@ -10,9 +10,30 @@ public class Main {
         ObjectInputStream ois;
         Classifier classifier;
 
+        String wekaModelPath = "./weka_models/extended dataset/";
+        switch (argv[1]){
+            case "bayes_net":
+                wekaModelPath += "key_bayes_net.model";
+                break;
+            case "kstar":
+                wekaModelPath += "key_kstar.model";
+                break;
+            case "multilayer_perceptron":
+                wekaModelPath += "key_multilayer_perceptron.model";
+                break;
+            case "simple_logistic":
+                wekaModelPath += "key_simple_logistic.model";
+                break;
+            case "smo":
+                wekaModelPath += "key_smo.model";
+                break;
+            default:
+                System.out.println("invalid model parameter");
+                return;
+        }
+
         try {
-            ois = new ObjectInputStream(new FileInputStream("./weka_models/key_smo.model"));
-            classifier = (Classifier) ois.readObject();
+            classifier = (Classifier) new ObjectInputStream(new FileInputStream(wekaModelPath)).readObject();
         } catch (IOException e) {
             System.out.println("weka model file not found");
             return;
@@ -78,7 +99,7 @@ public class Main {
             System.out.println("Error running python script");
         }
 
-        double[] values = new double[12];
+        double[] values = new double[13];
         int index = 0;
         Scanner scanner;
         File weightsFile = new File("./temp.txt");
